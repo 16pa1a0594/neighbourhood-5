@@ -1,15 +1,15 @@
 
 ## Neighbourhood Map 
-This single page application shows a map of list of temples. This app is built for a Neighbourhood map project which is a part of the Full stack Web Development Nanodegree at Udacity.
+This single page application shows a map of list of temples. this project is a application of full stack web development course at udacity
 
-## Libraries, frameworks and APIs used
+## Frameworks and api's:
 1. Knockout JS
 2. Google Maps
 3. Foursquare
 4. Fontawesome
 5. JQuery
 
-## Project Requirements / Features
+## Project Requirements and its features
 
 * Display map markers identifying at least 7 locations that you are interested in within chosen neighborhood. Your app displays those locations by default when the page is loaded.
 * Implement a list view of the set of locations.
