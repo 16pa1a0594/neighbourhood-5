@@ -62,8 +62,8 @@ function formatPhone(phonenum) {
 var Location = function(data) {
 	var self = this;
 	this.name = data.name;
-	this.lat = data.lat;
-	this.long = data.long;
+	this.latitude = data.latitude;
+	this.longitude = data.longitude;
 	this.URL = "";
 	this.street = "";
 	this.city = "";
@@ -71,7 +71,7 @@ var Location = function(data) {
 
 	this.visible = ko.observable(true);
 
-	var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll='+ this.lat + ',' + this.long + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20160118' + '&query=' + this.name;
+	var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll='+ this.latitude + ',' + this.longitude+ '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20160118' + '&query=' + this.name;
 
 	$.getJSON(foursquareURL).done(function(data) {
 		var results = data.response.venues[0];
@@ -100,7 +100,7 @@ var Location = function(data) {
 	this.infoWindow = new google.maps.InfoWindow({content: self.contentString});
 
 	this.marker = new google.maps.Marker({
-			position: new google.maps.LatLng(data.lat, data.long),
+			position: new google.maps.LatLng(data.latitude, data.longitude),
 			map: map,
 			title: data.name
 	});
@@ -145,7 +145,7 @@ function AppViewModel() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 6,
-			center: {lat: 15.9129, lng: -79.7400}
+			center: {lat: 16.00, lng: -80.00}
 	});
 
 	// Foursquare API settings
@@ -178,7 +178,7 @@ function AppViewModel() {
 }
  
  this.centerMap = function(){
-        map.setCenter({lat:15.9129, lng:-79.7400});
+        map.setCenter({lat:16.9129, lng:-80.7400});
     };
 function startApp() {
 	ko.applyBindings(new AppViewModel());
